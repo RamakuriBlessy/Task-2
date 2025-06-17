@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery by URL</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body class="theme-rainbow">
+  <div class="top-bar">
+    <h1>Image Gallery</h1>
+    <div class="top-buttons">
+      <button id="toggleMode">Toggle Dark/Light Mode</button>
+      <button id="cycleTheme">Switch Theme</button>
+      <button id="clearAll">Clear All</button>
+    </div>
+  </div>
+
+  <div class="upload-section">
+    <input type="text" id="imageURL" placeholder="Enter Image URL" />
+    <button onclick="addImageByURL()">Add Image</button>
+  </div>
+
+  <div class="search-section">
+    <input type="text" id="searchBox" placeholder="Search images by URL..." oninput="filterImages()" />
+  </div>
+
+  <div class="tab-bar">
+    <button onclick="showTab('all')" id="allTab" class="active-tab">All Images</button>
+    <button onclick="showTab('favorites')" id="favoritesTab">Favorites</button>
+    <button onclick="showTab('deleted')" id="deletedTab">Deleted Images</button>
+  </div>
+
+  <div class="gallery" id="galleryContainer"></div>
+  <div class="gallery" id="favoritesContainer" style="display:none;"></div>
+  <div class="gallery" id="deletedContainer" style="display:none;"></div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
